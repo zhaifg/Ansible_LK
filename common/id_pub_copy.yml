@@ -1,0 +1,17 @@
+--- 
+   - hosts: 
+       - zxydbservs
+       - sxydbservs
+     
+     vars:
+        id_pub: id_rsa.pub
+
+     remote_user: root
+     
+     tasks: 
+       - name: copy public Key
+         copy: src=files/{{id_pub}} dest=/tmp/{{id_pub}}
+
+       - name: create knonws host
+         script: files/InPubKey.sh
+ 
