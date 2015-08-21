@@ -1,0 +1,26 @@
+Oct 9, 2014 11:34:44 AM org.apache.catalina.startup.ConnectorCreateRule _setExecutor
+WARNING: Connector [org.apache.catalina.connector.Connector@288051] does not support external executors. Method setExecutor(java.util.concurrent.Executor) not found.
+Oct 9, 2014 11:34:44 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/jdk1.6.0_41/jre/lib/amd64/server:/usr/java/jdk1.6.0_41/jre/lib/amd64:/usr/java/jdk1.6.0_41/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Oct 9, 2014 11:34:44 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Oct 9, 2014 11:34:44 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 496 ms
+Oct 9, 2014 11:34:44 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Oct 9, 2014 11:34:44 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.16
+Oct 9, 2014 11:34:45 AM org.apache.catalina.core.StandardContext addApplicationListener
+INFO: The listener "com.longkey.eboss.common.LuceneSolrContextListener" is already configured for this context. The duplicate definition has been ignored.
+Oct 9, 2014 11:34:50 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'monitor'
+Oct 9, 2014 11:34:50 AM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'context-servlet'
+Oct 9, 2014 11:35:01 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Oct 9, 2014 11:35:01 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Oct 9, 2014 11:35:01 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/18  config=null
+Oct 9, 2014 11:35:01 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 17059 ms

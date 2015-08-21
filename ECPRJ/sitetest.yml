@@ -1,0 +1,40 @@
+---
+#  - hosts: all
+#    remote_user: root
+#    sudo: yes
+#    roles:
+#      - common
+  
+
+#  - hosts: tests
+#    user: root
+#    sudo: yes
+#    roles:
+#      - webservers
+#
+#  - hosts: tests
+#    user: root
+#    sudo: yes
+#
+#    roles:
+#      - jdkconfig
+#      - appservers
+#
+#
+#  - hosts: tests
+#    user: root
+#    sudo: yes
+#    roles:
+#      - webconfig
+
+  - hosts: tests
+    user: root
+    sudo: yes
+    roles:
+      - dbservers
+
+#  - hosts: ngixes
+#    user: root
+
+#    roles:
+#      - nginxes

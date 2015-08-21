@@ -1,0 +1,30 @@
+---
+  - name: Install http and php etc
+    yum: name={{ item }}  state=latest
+    with_items:
+      - httpd
+      - httpd-devel
+      - httpd-tools
+      - php
+      - php-mysql
+      - php-mbstring
+      - php-xml
+      - php-xmlrpc
+      - php-mcrypt
+      - php-gd
+      - php-devel
+      - php-apc
+      - php-pecl-apc
+      - php-pecl-memcache
+      - memcached 
+    tags: webservs
+
+  - name: mkdir /home/webapp
+    command: mkdir -p /home/webapp
+
+  - name: http service state
+    service: name=httpd state=started enabled=yes
+
+  - name: copy php.ini
+    template: src=php.ini.j2 dest=/etc/php.ini  mode=0644
+    notify: httpd restart

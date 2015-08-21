@@ -1,0 +1,48 @@
+---
+#  - name: Install tengine deps
+#    yum: name={{ item }}  state=latest
+#    with_items:
+#       - pcre
+#       - pcre-devel
+#       - zlib
+#       - zlib-devel
+#       - gcc
+#       - gcc-c++
+#       - libxslt-devel
+#       - gd-devel
+#       - lua-devel
+#       - geoip-devel
+#       - openssl
+#       - openssl-devel
+#
+#  - name: download  tengine
+#    get_url: url=http://tengine.taobao.org/download/{{ tengine_version }}.tar.gz dest=/tmp/{{ tengine_version }}.tar.gz mode=0755
+#
+#  - name: download  purege
+#    get_url: url=http://labs.frickle.com/files/{{ngx_cache_purge}}.tar.gz dest=/tmp/{{ngx_cache_purge}}.tar.gz mode=0755
+#
+#  - name: unarchive files
+#    #unarchive: src=/root/src/{{ item }}.tar.gz dest=/root/src/
+#    command: tar -xf /tmp/{{item}}.tar.gz -C /tmp
+#    with_items:
+#      - "{{ tengine_version }}"
+#      - "{{ ngx_cache_purge }}"
+#
+#  - name: new group
+#    group: name=nginx system=yes
+#
+#  - name: New nginx
+#    user: name=nginx shell=/sbin/nologin  createhome=no group=nginx
+
+#  - name: Install Tengine
+#    script: tengine_install.sh >> /tmp/nginx_install.log
+
+  - name: create Nginx Config Files
+    template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf  mode=0644
+
+  - name: cp lsb scripts
+    copy: src=nginx dest=/etc/init.d/nginx owner=root group=root mode="0755"
+
+  - name: nginx service state
+    service: name=nginx state=started enabled=yes
+    notify: nginx restart

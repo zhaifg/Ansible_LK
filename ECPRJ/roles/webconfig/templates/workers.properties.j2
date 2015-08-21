@@ -1,0 +1,23 @@
+worker.list=loadbalancer,status
+
+# Define template worker
+worker.template.port=8009
+worker.template.type=ajp13
+worker.template.lbfactor=1
+worker.template.ping_mode=A
+worker.template.socket_timeout=300
+worker.template.socket_keepalive=True
+# Not necessary to specify connection_pool_timeout with worker mpm
+worker.template.connection_pool_timeout=600
+
+# Referencing the template worker properties makes the workers.properties
+# shorter and more concise.
+worker.node1.reference=worker.template
+worker.node1.host=127.0.0.1
+
+
+worker.loadbalancer.type=lb
+worker.loadbalancer.balance_workers=node1
+worker.loadbalancer.sticky_session=1
+
+worker.status.type=status

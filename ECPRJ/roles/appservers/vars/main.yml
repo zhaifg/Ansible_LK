@@ -1,0 +1,6 @@
+---
+tomcat_version: tomcat
+webapp_dir: /home/webapp
+jvm_min: 4096m
+jvm_max: 4096m
+

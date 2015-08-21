@@ -1,0 +1,39 @@
+---
+  - name: Install http and php etc
+    yum: name={{ item }}  state=latest
+    with_items:
+      - httpd
+      - httpd-devel
+      - httpd-tools
+      - php
+      - php-mysql
+      - php-mbstring
+      - php-xml
+      - php-xmlrpc
+      - php-mcrypt
+      - php-gd
+      - php-devel
+      - php-apc
+      - php-pecl-apc
+      - php-pecl-memcache
+
+  - name: mkdir /home/webapp
+    command: mkdir -p /home/webapp
+
+  - name: http service state
+    service: name=httpd state=started enabled=yes
+
+  - name: copy httpd.conf to webservers
+    template: src=httpd.conf.j2  dest=/etc/httpd/conf/httpd.conf mode=644
+
+
+  - name: chown webapp
+    file: path=/home/webapp owner=apache group=apache mode=0755
+
+  - name: copy conf.d directory
+    copy: src=conf.d  dest=/etc/httpd/  mode=755
+
+
+  - name: copy php.ini
+    template: src=php.ini.j2 dest=/etc/php.ini  mode=0644
+    notify: httpd restart

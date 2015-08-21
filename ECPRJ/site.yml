@@ -1,0 +1,80 @@
+---
+#  - hosts: all
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - common
+
+#  - hosts: sxywebapps
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - webservers
+#      - jdkconfig
+#      - appservers
+#      - webconfig
+#
+#  - hosts: zxywebapps
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - webservers
+#      - jdkconfig
+#      - appservers
+#      - webconfig
+#
+#  - hosts: weixinserv
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - webservers
+#      - jdkconfig
+#      - appservers   
+#      - webconfig  
+
+
+
+#  - hosts: imgservs
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - imgservers
+
+
+
+#  - hosts: lbservs
+#    remote_user: cib
+#    sudo: yes
+#    roles:
+#      - nginxes
+
+#  - hosts: sxydbservs
+#    remote_user: cib
+#    sudo: yes
+
+#    roles:
+#      - dbservers
+
+#  - hosts: zxydbservs
+#    remote_user: cib
+#    sudo: yes
+
+#    roles:
+#      - dbservers
+
+
+
+#   - hosts: nfsservs
+#     remote_user: cib
+#     sudo: yes
+
+#     roles:
+#       - nfsservers
+
+
+   - hosts: MonitorServ 
+     remote_user: cib
+     sudo: yes
+     roles:
+       - dbservers
+

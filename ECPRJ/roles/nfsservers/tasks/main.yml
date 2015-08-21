@@ -1,0 +1,27 @@
+---
+  - name: Install NFS
+    yum: name={{ item }}  state=latest
+    with_items:
+      - '"@NFS file server"'
+
+  - name: creat tomcat user
+    user: name=tomcat shell=/bin/bash group=nobody uid=46
+
+  - name: mkdir datadir
+    command: mkdir -p {{datadir}}
+
+  - name: rpcbind service state
+    service: name=rpcbind state=started enabled=yes
+
+  - name: nfs service state
+    service: name=nfs state=started enabled=yes
+
+  - name: set nfs data directory
+    file: path={{datadir}} owner=tomcat group=nobody mode=0755
+
+  - name: set nfs config file
+    template: src=export.j2  dest=/etc/exports  mode=0644
+    notify: nfs restart
+
+#  - name: mounted imgserver
+#    mount: name=/home src='' fstype=xfs opts=noatime 

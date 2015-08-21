@@ -1,0 +1,5 @@
+---
+webapp_dir: /home/webapp
+port: 80
+prj_name: longkey
+

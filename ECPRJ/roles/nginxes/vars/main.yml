@@ -1,0 +1,7 @@
+---
+tengine_version: tengine-2.1.1
+ngx_cache_purge : ngx_cache_purge-2.3
+worker_processes: 2
+max_open_file: 65535
+ngx_cache_dir: /tmp
+num_cpus: 2

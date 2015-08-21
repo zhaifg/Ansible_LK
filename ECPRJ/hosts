@@ -1,0 +1,47 @@
+[lbservs]
+LBServ01  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.7  
+LBServ02  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.8
+
+[imgservs]
+ImgServ01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.9
+ImgServ02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.10
+ImgServ03  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.11
+
+[zxywebapps]
+zxywebapp01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.12
+zxywebapp02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.13
+
+[sxywebapps]
+#sxywebappA01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.15
+#sxywebappA02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.16
+sxywebappB01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.17
+sxywebappB02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.18
+
+[zxydbservs]
+zxydb01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.4 
+zxydb02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.5
+
+
+[sxydbservs]
+sxydbA01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.6
+sxydbA02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.7
+sxydbB01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.8
+sxydbB02 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.9
+
+[weixinserv]
+weixin01 ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.14
+
+[sxymemsrvs]
+sxymemA01  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.19
+sxymemB01  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.20
+
+[nfsservs]
+NFSServ01  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.21
+NFSServ02  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.22
+
+[basicservs]
+MonitorServ  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.5
+BakServ  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.6
+ManagServ  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.8.4
+GobalSlave  ansible_ssh_user=cib  ansible_ssh_pass=Longkey@0809  ansible_ssh_host=10.11.9.10
+
