@@ -9,7 +9,7 @@ if [[  -d /root/.ssh  ]];then
   
 else
     mkdir /root/.ssh && chmod -R 700 /root/.ssh
-    cat /tmp/id_rsa.pub >> /root/.ssh/known_hosts
-    chmod 400 /root/.ssh/known_hosts
+    cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys 
+    chmod 400 /root/.ssh/authorized_keys 
     
 fi
