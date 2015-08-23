@@ -1,0 +1,17 @@
+--- 
+   - hosts: sxywebapps
+#       - zxydbservs
+#       - sxydbservs
+     
+     vars:
+        webprj: cib
+        destdir: /home/webapp/ec
+     remote_user: root
+     
+     tasks: 
+       - name: svn co prj
+         subversion: repo=http://202.111.52.57:81/repos/cib dest={{destdir}}   username=lk0356 password=0356
+         tags: sxysvnup
+
+
+ 

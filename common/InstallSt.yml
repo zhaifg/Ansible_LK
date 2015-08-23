@@ -9,9 +9,7 @@
      remote_user: root
      
      tasks: 
-       - name: copy public Key
-         copy: src=files/{{id_pub}} dest=/tmp/{{id_pub}}
+       - name: Install htop
+         yum: name=htop  state=present
 
-       - name: create knonws host
-         script: files/InPubKey.sh
  
