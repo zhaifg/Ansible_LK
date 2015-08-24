@@ -1,0 +1,31 @@
+--- 
+   - hosts: 
+       - zxydbservs
+       - sxydbservs
+       - GobalSlave
+     
+     vars:
+
+     remote_user: root
+     
+     tasks: 
+       - name: Install MHA Node basic softwares
+         yum: name=perl-DBD-MySQL  state=present
+      
+       - name: Install MHA Node 
+         yum: name=/tmp/mha4mysql-node-0.56-0.el6.noarch.rpm  state=present
+         #command: rpm -ivh /tmp/mha4mysql-node-0.56-0.el6.noarch.rpm 
+         
+       - name: Install mha Server
+         yum: name={{item}}  state=present
+         with_items:
+           - perl-DBD-MySQL
+           - perl-Config-Tiny
+           - perl-Log-Dispatch
+           - perl-Parallel-ForkManager
+           - perl-Config-IniFiles
+         when: ansible_hostname == "GobalSlave"
+ 
+       - name: Install MHA Node
+         yum: name=/tmp/mha4mysql-manager-0.56-0.el6.noarch.rpm   state=present
+         when: ansible_hostname == "GobalSlave"
