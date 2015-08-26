@@ -1,14 +1,14 @@
 --- 
-   - hosts: 
-       - zxydbservs
-       - sxydbservs
-       - GobalSlave
+   - hosts: all
+#       - zxydbservs
+#       - sxydbservs
+#       - GobalSlave
      
      vars:
 
-     remote_user: root
+   #  remote_user: root
      
      tasks: 
-       - name: Install MHA Node basic softwares
+       - name: set root passwd 
          shell: echo "Longkey@0809.cn" | passwd root --stdin
       
