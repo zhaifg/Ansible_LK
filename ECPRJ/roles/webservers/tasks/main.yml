@@ -14,7 +14,7 @@
       - php-gd
       - php-devel
       - php-apc
-      - php-pecl-apc
+      #- php-pecl-apc
       - php-pecl-memcache
       - memcached 
     tags: webservs
